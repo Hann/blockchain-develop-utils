@@ -36,6 +36,9 @@ jobs:
       - run: pnpm build
 
       - uses: actions/configure-pages@v5
+        with:
+          # Pages가 꺼져 있으면 워크플로가 직접 켠다 (수동 Settings 단계 불필요)
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:

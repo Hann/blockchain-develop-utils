@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router'
-import { Blocks, ExternalLink, Home } from 'lucide-react'
+import { Blocks, Home } from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -18,7 +18,6 @@ import {
   SidebarTrigger,
 } from '@/components/ui/sidebar'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { toolHref, tools } from '@/data/tools'
@@ -145,19 +144,10 @@ function AppSidebar() {
       </SidebarContent>
 
       <SidebarFooter className="border-t border-sidebar-border">
-        <div className="flex items-center justify-between gap-2 px-2 py-1 text-[11px] text-muted-foreground group-data-[collapsible=icon]:hidden">
+        <div className="flex items-center px-2 py-1 text-[11px] text-muted-foreground group-data-[collapsible=icon]:hidden">
           <span className="font-mono">
             {tools.filter((t) => t.status === 'ready').length}/{tools.length} ready
           </span>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="hover:text-foreground"
-            aria-label="GitHub"
-          >
-            <ExternalLink className="size-3.5" />
-          </a>
         </div>
       </SidebarFooter>
 
@@ -195,16 +185,6 @@ function TopBar() {
         >
           alpha
         </Badge>
-        <Button size="sm" variant="ghost" asChild>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <ExternalLink className="size-3.5" />
-            GitHub
-          </a>
-        </Button>
       </div>
     </header>
   )
